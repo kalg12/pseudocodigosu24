@@ -8,6 +8,8 @@ Agregar un botón para enviar el formulario.
 Utilizar JavaScript para capturar el evento de envío del formulario.
 En el evento de envío, validar si el usuario es mayor de 18 años.
 Mostrar un mensaje que diga "¡Hola, [nombre]! Eres mayor de edad" si el usuario tiene 18 años o más, o "¡Hola, [nombre]! Eres menor de edad" si es menor de 18 años.
+
+
 Actividad 2: Contador de Clicks
 Objetivo
 Crear un botón que, al ser presionado, muestre cuántas veces ha sido clickeado.
