@@ -32,6 +32,15 @@ function calcularImpuestos() {
     const salarioNeto = salarioAnual - impuesto;
     console.log(impuesto);
     console.log(salarioNeto);
+
+    /* Presentamos a usuario valores finales en el HTML */
+    document.getElementById(
+      "taxes-txt-1"
+    ).innerHTML = `<h3 id="taxes-txt-1">Impuesto a pagar:$${impuesto}</h3>`;
+
+    document.getElementById(
+      "taxes-txt-2"
+    ).innerHTML = `<h3 id="taxes-txt-2">Salario después de impuestos:$${salarioNeto}</h3>`;
   } else {
     impuesto = 7000 + (salarioAnual - 50000) * 0.3;
     console.log(impuesto);
