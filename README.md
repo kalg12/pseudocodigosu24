@@ -48,4 +48,4 @@ Adaptar y expandir el sistema de pedidos en línea para que simule ser utilizado
 | **Calidad del Código**         | Código bien organizado, comentado y siguiendo las mejores prácticas de programación.                      | Código organizado con algunos comentarios útiles.           | Código con mínima organización y comentarios.    | Código desorganizado y sin comentarios.         |
 
 ## Entrega y Presentación
-El proyecto será entregado en forma de un archivo comprimido que contenga todos los archivos necesarios. Deberá presentarse también una demostración en clase donde se muestre el funcionamiento del sitio, explicando el código y las decisiones de diseño tomadas.
+El proyecto será entregado de manera presencial. Deberá estar en un repositorio a su vez.
