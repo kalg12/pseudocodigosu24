@@ -22,7 +22,8 @@ Adaptar y expandir el sistema de pedidos en línea para que simule ser utilizado
 
 ## Estructura de Archivos Sugerida
 
-/proyecto-restaurante
+```bash
+  /proyecto-restaurante
 │
 ├── assets
 │ ├── css
@@ -31,6 +32,9 @@ Adaptar y expandir el sistema de pedidos en línea para que simule ser utilizado
 │ └── script.js
 │
 └── index.html
+```
+
+
 
 
 ## Rúbrica de Evaluación
