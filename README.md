@@ -23,12 +23,14 @@ Adaptar y expandir el sistema de pedidos en línea para que simule ser utilizado
 ## Estructura de Archivos Sugerida
 
 /proyecto-restaurante
-/assets
-/css
-style.css
-/js
-script.js
-index.html
+│
+├── assets
+│ ├── css
+│ │ └── style.css
+│ └── js
+│ └── script.js
+│
+└── index.html
 
 
 ## Rúbrica de Evaluación
