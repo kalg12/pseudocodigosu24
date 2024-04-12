@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Restaurante XYZ - Hacer Pedido</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 0;
+        background: #f4f4f4;
+      }
+      header {
+        background: #333;
+        color: #fff;
+        padding: 10px 20px;
+        text-align: center;
+      }
+      .container {
+        width: 80%;
+        margin: 20px auto;
+        background: white;
+        padding: 20px;
+      }
+      .menu-item {
+        border-bottom: 1px solid #ddd;
+        padding: 10px;
+        display: flex;
+        justify-content: space-between;
+      }
+      .menu-item:last-child {
+        border-bottom: none;
+      }
+      .cart,
+      .order-details {
+        /* Se agregó la clase order-details */
+        border: 1px solid #ddd;
+        padding: 10px;
+        margin-top: 20px;
+      }
+      .form-container {
+        margin-top: 20px;
+      }
+      input[type="text"],
+      input[type="number"] {
+        width: calc(100% - 22px);
+        padding: 10px;
+        margin: 5px 0;
+        display: inline-block;
+        box-sizing: border-box;
+      }
+      button {
+        background: #5cb85c;
+        color: white;
+        border: none;
+        padding: 10px 20px;
+        cursor: pointer;
+      }
+      button:hover {
+        background: #4cae4c;
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <h1>Restaurante XYZ - Hacer Pedido</h1>
+    </header>
+    <div class="container">
+      <div>
+        <h2>Menú</h2>
+        <div class="menu-item">
+          <span>Pizza Margarita - $120</span>
+          <button onclick="addToCart('Pizza Margarita', 120)">Agregar</button>
+        </div>
+        <div class="menu-item">
+          <span>Hamburguesa con queso - $100</span>
+          <button onclick="addToCart('Hamburguesa con queso', 100)">
+            Agregar
+          </button>
+        </div>
+        <div class="menu-item">
+          <span>Ensalada César - $80</span>
+          <button onclick="addToCart('Ensalada César', 80)">Agregar</button>
+        </div>
+      </div>
+      <div class="cart">
+        <h3>Carrito de Compras</h3>
+        <ul id="cart-items"></ul>
+        <strong>Total: $<span id="total">0</span></strong>
+      </div>
+      <div class="order-details" id="order-details" style="display: none">
+        <!-- Sección de detalles de pedido -->
+        <h3>Detalles del Pedido</h3>
+        <p id="order-name"></p>
+        <p id="order-address"></p>
+        <ul id="order-summary"></ul>
+        <strong>Total: $<span id="order-total"></span></strong>
+      </div>
+      <div class="form-container">
+        <h2>Información de Pedido</h2>
+        <input
+          type="text"
+          id="customer-name"
+          placeholder="Nombre Completo"
+          required
+        />
+        <input
+          type="text"
+          id="customer-address"
+          placeholder="Dirección"
+          required
+        />
+        <button onclick="submitOrder()">Enviar Pedido</button>
+      </div>
+    </div>
+    <script>
+      const cart = [];
+      let total = 0; // Variable para mantener el total del pedido
+
+      function addToCart(item, price) {
+        cart.push({ item, price });
+        document.getElementById(
+          "cart-items"
+        ).innerHTML += `<li>${item} - $${price}</li>`;
+        total += price; // Actualizar el total
+        document.getElementById("total").textContent = total;
+      }
+
+      function submitOrder() {
+        const name = document.getElementById("customer-name").value;
+        const address = document.getElementById("customer-address").value;
+        if (name && address && cart.length > 0) {
+          // Mostrar detalles del pedido en la interfaz en lugar de usar alert
+          document.getElementById("order-name").textContent = "Nombre: " + name;
+          document.getElementById("order-address").textContent =
+            "Dirección: " + address;
+          document.getElementById("order-summary").innerHTML = cart
+            .map((item) => `<li>${item.item} - $${item.price}</li>`)
+            .join("");
+          document.getElementById("order-total").textContent = total;
+          document.getElementById("order-details").style.display = "block"; // Mostrar detalles del pedido
+        } else {
+          alert(
+            "Por favor, completa todos los campos y añade al menos un artículo al carrito."
+          );
+        }
+      }
+    </script>
+  </body>
+</html>
